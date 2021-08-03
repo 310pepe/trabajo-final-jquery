@@ -1,3 +1,11 @@
+/*
+Ficha:          2252471
+Aprendiz:       Jose Daniel Bermudez Salamanca
+Fecha:          03/08/2021
+Objetivo:       Ejercicos jquery y reforzamiento de conocimientos
+Verificado w3c
+*/ 
+
 //traer un elemento html con su id
 let eje1= document.getElementById('ejer1');
 //añadir un escuchador
@@ -130,8 +138,8 @@ eje10.addEventListener('click',ejer10);
 function ejer10()
 {
     //codigo jquery
-    $("#fig2a").removeClass("gryffindor");
-    $("#fig2a").addClass("slytherin");
+    $("#fig5").removeClass("gryffindor");
+    $("#fig5").addClass("slytherin");
 }
 
 //llamado a la funcion para que por defecto se cargue el ejercicio1
