@@ -1,4 +1,5 @@
 <?php
+$i=5;
 if($_GET['id']){
 get_persons($_GET['id']);
 } else {
@@ -30,11 +31,12 @@ try {
     }
 
     $stm=$dbh->prepare("SELECT * FROM `prueba_users` " . $querywhere);
-    $stm->execute();
-    $result=$stm->fetchAll(PDO::FETCH_ASSOC);
     
-    if($result)
+    
+    
+    if($stm->execute())
     {
+        $result=$stm->fetchAll(PDO::FETCH_ASSOC);
         if(sizeof($result)>0)
         {
             $jsondata["success"] = true;
