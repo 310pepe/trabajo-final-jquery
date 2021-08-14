@@ -1,7 +1,29 @@
 $(document).ready(function(){
+    //función para saber cual php debe cargar
+    let urlPhp="";
+    function buscarPhp(pag)
+    {
+        switch (pag) {
+            case 1:
+                urlPhp="../php/personasg.php";
+            break;
+
+            case 2:
+                urlPhp="../php/personas1.php";
+            break;
+
+            case 3:
+                urlPhp="../php/personas2.php";
+            break;
+        
+            default:
+                break;
+        }
+    }
+
     //getdeails será nuestra función para enviar la solicitud ajax
     var getdetails = function(id){
-    return $.getJSON( "../php/personas.php", { "id" : id });
+    urlPhp=$.getJSON( urlPhp, { "id" : id });
     }
     //al hacer click sobre cualquier elemento que tenga el atributo data-user.....
     $('[data-user]').click(function(e){

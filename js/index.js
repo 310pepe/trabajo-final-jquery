@@ -5,6 +5,14 @@ Fecha:          03/08/2021
 Objetivo:       Ejercicos jquery y reforzamiento de conocimientos
 Verificado w3c
 */ 
+let hola2='buenas tarde';
+
+//crear función para subir una variable a localhost
+function buscarPhp(pag)
+{
+    localStorage.setItem('php','buenas tardes' );
+    console.log('buenas');
+}
 
 //traer un elemento html con su id
 let eje1= document.getElementById('ejer1');
