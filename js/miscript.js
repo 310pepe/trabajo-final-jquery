@@ -1,29 +1,29 @@
 $(document).ready(function(){
-    //función para saber cual php debe cargar
+    //traer la variable de localstorage y hacer un filtro
+    let pag=localStorage.getItem('php');
     let urlPhp="";
-    function buscarPhp(pag)
-    {
-        switch (pag) {
-            case 1:
-                urlPhp="../php/personasg.php";
-            break;
+   
+    switch (pag) {
+        case '1':
+            urlPhp="../php/personas.php";
+        break;
 
-            case 2:
-                urlPhp="../php/personas1.php";
-            break;
+        case '2':
+            urlPhp="../php/personas1.php";
+        break;
 
-            case 3:
-                urlPhp="../php/personas2.php";
-            break;
+        case '3':
+            urlPhp="../php/personas2.php";
+        break;
         
-            default:
-                break;
-        }
+        default:
+           break;
     }
+    
 
     //getdeails será nuestra función para enviar la solicitud ajax
     var getdetails = function(id){
-    urlPhp=$.getJSON( urlPhp, { "id" : id });
+    return $.getJSON( urlPhp, { "id" : id });
     }
     //al hacer click sobre cualquier elemento que tenga el atributo data-user.....
     $('[data-user]').click(function(e){

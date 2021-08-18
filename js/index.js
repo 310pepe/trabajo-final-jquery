@@ -5,14 +5,6 @@ Fecha:          03/08/2021
 Objetivo:       Ejercicos jquery y reforzamiento de conocimientos
 Verificado w3c
 */ 
-let hola2='buenas tarde';
-
-//crear función para subir una variable a localhost
-function buscarPhp(pag)
-{
-    localStorage.setItem('php','buenas tardes' );
-    console.log('buenas');
-}
 
 //traer un elemento html con su id
 let eje1= document.getElementById('ejer1');
@@ -175,3 +167,10 @@ anio=anio.getFullYear();
 
 //agragar el año al html, con el span con id an
 let hola=document.getElementById('an').innerHTML=anio;
+
+//funcion para colocar variable en localstorage, la utilizaremos para saber qué php utilizar
+function buscarPhp(pa)
+{
+    localStorage.setItem('php',pa);
+    console.log(pa);
+}
