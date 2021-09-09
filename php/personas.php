@@ -14,14 +14,16 @@ $dbname = "trabajo";
 
 
 
-try {      
+try {     
+    //conexión a mysql 
     $dsn = "mysql:host=".$dbserver.";dbname=".$dbname;
     $dbh = new PDO($dsn, $dbuser,$password); 
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
     $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
+    //
     $jsondata=array();
 
+    //Verificar el tipo de variable que es id
     if(is_array($id)){
         $id = array_map('intval', $id);
         $querywhere = "where id in (" . implode( ',', $id ) . ")";
@@ -30,13 +32,16 @@ try {
         $querywhere = "WHERE `ID` = " . $id;
     }
 
+    //Creación de la consulta
     $stm=$dbh->prepare("SELECT * FROM `prueba_users` " . $querywhere);
     
     
-    
+    //Ejecutar la consulta
     if($stm->execute())
     {
+        //Obtener los resultados y transformarlos a un arreglo asociativo
         $result=$stm->fetchAll(PDO::FETCH_ASSOC);
+        //Dar la información de la consulta a la variable jsondata
         if(sizeof($result)>0)
         {
             $jsondata["success"] = true;

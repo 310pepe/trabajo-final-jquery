@@ -22,3 +22,10 @@ CREATE TABLE IF NOT EXISTS `items` (
 `updated_at` timestamp NULL DEFAULT NULL,
 PRIMARY KEY (`id`)
 ) ;
+CREATE TABLE `items` (
+  `id` int UNSIGNED NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) 
